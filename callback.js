@@ -64,23 +64,42 @@
 //   console.log("post/2", post2);
 // })();
 
-const array = [
-  { name: "Emin", age: 19 },
-  { name: "Fidan", age: 21 },
-  { name: "Minaya", age: 21 },
-];
+// //Callback
+// const array = [
+//   { name: "Emin", age: 19 },
+//   { name: "Fidan", age: 21 },
+//   { name: "Minaya", age: 21 },
+// ];
 
-function todoList() {
-  setTimeout(() => {
-    array?.forEach((item) => console.log(item));
-  }, 1000);
-}
+// function todoList() {
+//   setTimeout(() => {
+//     array?.forEach((item) => console.log(item));
+//   }, 1000);
+// }
 
-function newTodo(todo, cb) {
-  setTimeout(() => {
-    array?.push(todo);
-    cb();
-  }, 3000);
-}
+// function newTodo(todo, cb) {
+//   setTimeout(() => {
+//     array?.push(todo);
+//     cb();
+//   }, 3000);
+// }
 
-newTodo({ name: "Gulu" }, todoList);
+// newTodo({ name: "Gulu" }, todoList);
+
+// function hello() {
+//   setTimeout(() => {
+//     console.log("1");
+//   }, 1000);
+// }
+// hello();
+
+// setTimeout(() => {
+//   function hello() {
+//     console.log("2");
+//   }
+//   hello();
+// }, 1000);
+
+// (() => {
+//   console.log("anonyms");
+// })();

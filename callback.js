@@ -49,17 +49,38 @@
 
 // getData();
 
-(async () => {
-  const users = await (
-    await fetch("https://jsonplaceholder.typicode.com/users")
-  ).json();
-  const post1 = await (
-    await fetch("https://jsonplaceholder.typicode.com/posts/1")
-  ).json();
-  const post2 = await (
-    await fetch("https://jsonplaceholder.typicode.com/posts/2")
-  ).json();
-  console.log("users", users);
-  console.log("post/2", post2);
-  console.log("post/1", post1);
-})();
+// (async () => {
+//   const users = await (
+//     await fetch("https://jsonplaceholder.typicode.com/users")
+//   ).json();
+//   const post1 = await (
+//     await fetch("https://jsonplaceholder.typicode.com/posts/1")
+//   ).json();
+//   const post2 = await (
+//     await fetch("https://jsonplaceholder.typicode.com/posts/2")
+//   ).json();
+//   console.log("users", users);
+//   console.log("post/1", post1);
+//   console.log("post/2", post2);
+// })();
+
+const array = [
+  { name: "Emin", age: 19 },
+  { name: "Fidan", age: 21 },
+  { name: "Minaya", age: 21 },
+];
+
+function todoList() {
+  setTimeout(() => {
+    array?.forEach((item) => console.log(item));
+  }, 1000);
+}
+
+function newTodo(todo, cb) {
+  setTimeout(() => {
+    array?.push(todo);
+    cb();
+  }, 3000);
+}
+
+newTodo({ name: "Gulu" }, todoList);

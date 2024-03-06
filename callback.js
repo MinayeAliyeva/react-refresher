@@ -146,5 +146,10 @@ fetch("https://jsonplaceholder.typicode.com/users/1")
     console.log("1", users);
     fetch("https://jsonplaceholder.typicode.com/users/2")
       .then((data) => data.json())
-      .then((data) => console.log("2",data));
+      .then((data) => {
+        console.log("2", data);
+        fetch("https://jsonplaceholder.typicode.com/users/3")
+          .then((data) => data.json())
+          .then((data) => console.log("3", data));
+      });
   });

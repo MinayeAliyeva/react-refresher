@@ -23,4 +23,6 @@ function newTodo(todo) {
   });
 }
 
-newTodo({ name: "Gulu" }).then((response) => toDo());
+newTodo({ name: "Gulu" })
+  .then((response) => toDo())
+  .catch((error) => console.log("err"));

@@ -1,7 +1,7 @@
 // setTimeout(() => {
 //     console.log("Mehraba");
 // }, 3000);
-
+// import axios from "axios";
 // setInterval(() => {
 //     console.log("Mehraba");
 // }, 1000);
@@ -103,3 +103,48 @@
 // (() => {
 //   console.log("anonyms");
 // })();
+// https://jsonplaceholder.typicode.com/users
+
+// async function getData() {
+//   const res = await axios.get("https://jsonplaceholder.typicode.com/users");
+//   const data = await res?.data;
+//   return data;
+// }
+// getData();
+// console.log(data);
+
+// (async () => {
+//   const res = await axios.get("https://jsonplaceholder.typicode.com/users");
+//   return res.data;
+// })();
+// console.log("1", data);
+
+// const arr = [{ name: "Minaya" }, { name: "Emin" }];
+
+// const todoList = () => {
+//   setTimeout(() => {
+//     arr?.forEach((item) => console.log(item));
+//   }, 1000);
+// };
+
+// const newTodo = (todo, cb) => {
+//   setTimeout(() => {
+//     arr.push(todo);
+//     cb();
+//   }, 2000);
+// };
+// newTodo({ name: "Gulu" }, todoList);
+
+// const sayHi = (cb) => {
+//   cb();
+// };
+// sayHi(() => console.log("Helll"));
+
+fetch("https://jsonplaceholder.typicode.com/users/1")
+  .then((data) => data.json())
+  .then((users) => {
+    console.log("1", users);
+    fetch("https://jsonplaceholder.typicode.com/users/2")
+      .then((data) => data.json())
+      .then((data) => console.log("2",data));
+  });

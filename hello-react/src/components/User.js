@@ -1,8 +1,15 @@
 import PropTypes from "prop-types";
-function User({ name, sname, friends }) {
+function User({ name, sname, friends, age, adress, isLoggedin }) {
+  if (!isLoggedin) {
+    return <h1>Giris yap</h1>;
+  }
   return (
     <>
-    <h1>{name}</h1>
+      <h1>{name}</h1>
+      <p>
+        {adress?.title}, {adress?.zip}
+      </p>
+      <br />
       {friends?.map((friend, index) => (
         <div key={index}>
           {index}
@@ -14,8 +21,16 @@ function User({ name, sname, friends }) {
 }
 //typlamak
 User.propTypes = {
-    name: PropTypes.string,
-    sname:PropTypes.string,
-    friends:PropTypes.array
-  };
+  name: PropTypes.string.isRequired,
+  sname: PropTypes.string,
+  friends: PropTypes.array,
+  age: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  adress: PropTypes.shape({
+    title: PropTypes.string,
+    zip: PropTypes.number,
+  }),
+};
+User.defaultProps = {
+  isLoggedin: false,
+};
 export default User;

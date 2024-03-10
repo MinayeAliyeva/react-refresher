@@ -1,13 +1,17 @@
 import "./App.css";
-import Header from "./components/Header";
+import User from "./components/User";
+
 function App() {
   return (
-    <div>
-      Hello
-      <h1>
-        <Header />
-      </h1>
-    </div>
+    <>
+      <User
+        name="Minaya"
+        sname="Aliyeva"
+        isLogdin={true}
+        friends={["emin", "fidan", "taleh"]}
+      />
+    </>
   );
+  // return React.createElement('div',null,"hello");
 }
 export default App;

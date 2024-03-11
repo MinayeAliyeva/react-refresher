@@ -1,5 +1,6 @@
 import "./App.css";
 import { useState } from "react";
+import Counter from "./components/Counter";
 function App() {
   const [name, setName] = useState("Minaya");
   const [age, setAge] = useState(20);
@@ -26,6 +27,7 @@ function App() {
         update object
       </button>
       <br />
+      <Counter/>
     </div>
   );
 }
